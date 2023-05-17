@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.skin.TableHeaderRow?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controller.LegoStoreController"
+      prefHeight="400.0" prefWidth="600.0">
+
+<TableView fx:id="tableView">
+    <columns>
+        <TableColumn fx:id="idTableColumn" text="Id"></TableColumn>
+        <TableColumn fx:id="nameTableColumn" text="Name"></TableColumn>
+        <TableColumn fx:id="numberOfPiecesTableColumn" text="numberOfPieces"></TableColumn>
+        <TableColumn fx:id="quantityTableColumn" text="Quantity"></TableColumn>
+        <TableColumn fx:id="priceTableColumn" text="Price"></TableColumn>
+    </columns>
+
+</TableView>
+        <HBox>
+            <TextField fx:id="nameField" promptText="Name"></TextField>
+            <TextField fx:id="quantityField" promptText="Quantity"></TextField>
+            <TextField fx:id="priceField" promptText="Price"></TextField>
+            <TextField fx:id="numberOfPiecesField" promptText="Number of pieces"></TextField>
+            <Button text="Add" onMouseClicked="#addLego">Add lego</Button>
+        </HBox>
+
+    <HBox>
+        <TextField fx:id="idUpdateField" promptText="Id"></TextField>
+        <TextField fx:id="nameUpdateField" promptText="Name"></TextField>
+        <TextField fx:id="quantityUpdateField" promptText="Quantity"></TextField>
+        <TextField fx:id="priceUpdateField" promptText="Price"></TextField>
+        <TextField fx:id="numberOfPiecesUpdateField" promptText="Number of pieces"></TextField>
+        <Button text="Update" onMouseClicked="#updateLego">Update lego</Button>
+    </HBox>
+    <HBox>
+        <TextField fx:id="idDeleteField" promptText="Id"></TextField>
+        <Button text="Delete" onMouseClicked="#deleteLego">Delete lego</Button>
+    </HBox>
+
+</VBox>
