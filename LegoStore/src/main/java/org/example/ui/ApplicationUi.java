@@ -11,12 +11,14 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class ApplicationUi extends Application {
     private ConfigurableApplicationContext applicationContext;
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         applicationContext.publishEvent(new StageReadyEvent(stage));
     }
     @Override
     public void init(){
-        applicationContext= new SpringApplicationBuilder(LegoStoreApplication.class).run();
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(LegoStoreApplication.class);
+        builder.headless(false);
+        applicationContext = builder.run();
     }
 
     @Override

@@ -8,10 +8,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.example.model.LegoStore;
 import org.example.service.LegoStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.IntStream;
@@ -82,6 +84,14 @@ public class LegoStoreController {
         } catch (Exception e) {
             showError(e, "Lego not deleted!");
         }
+    }
+
+    public void logOut() {
+        SecurityContextHolder.clearContext();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Logged out");
+        alert.setContentText("You've been logged out");
+        alert.show();
     }
 
 

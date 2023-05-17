@@ -42,5 +42,5 @@
         <TextField fx:id="idDeleteField" promptText="Id"></TextField>
         <Button text="Delete" onMouseClicked="#deleteLego">Delete lego</Button>
     </HBox>
-
+    <Button text="Log Out" onMouseClicked="#logOut"></Button>
 </VBox>
